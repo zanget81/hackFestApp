@@ -8,12 +8,20 @@
         <title>Wikipedia Influence</title>
     </head>
     <body>
-        <h1>Wikipedia Influence</h1>
-        <p>
+		<div id="header2">
+			<img id="logo" border="0" src="http://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-logo-v2.svg" alt="Wikipedia logo" />
+			<h1>Wikipedia Influence</h1>
+		</div>	
+				
+		<div id="ListOfWikipediaItems">
+			<ul id="ListOfHotItems" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">
+			</ul>
+		</div>
+		
 		<script>
 			// A $( document ).ready() block.
 			$( document ).ready(wikipediaSearch(getZeeTag()));
-		</script>		
-        </p>
+		</script>
+		
     </body>
 </html>

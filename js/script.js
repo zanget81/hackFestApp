@@ -16,6 +16,9 @@ function wikipediaSearch(searchTerm)
 			return 0;
 		},
 	});
+	
+	var element = '<li>Term: ' + '</li>'
+	$('#ListOfHotItems').prepend('<li>Term </li>'); 
 }
 
 // TODO: Do an zeebox API request

@@ -6,7 +6,6 @@ body
 h1
 	{
 	color:#E0E0E0;
-	text-align:center;
 	font-family:"Times New Roman";
 	font-size:22px;
 	}
@@ -15,3 +14,14 @@ p
 	font-family:"Times New Roman";
 	font-size:20px;
 	}
+
+#header
+{
+	display: inline;
+}	
+	
+#logo
+{
+	width: 50px; 
+	height: 25px;
+}	
