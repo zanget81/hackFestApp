@@ -8,7 +8,7 @@ function wikipediaSearch(searchTerm)
 		{
 			console.log("search: " + searchTerm + " success");
 			console.log("total hits: " + json['query']['searchinfo']['totalhits']);
-			var element = '<li>Term ' + '"' + searchTerm + '"' + ' has ' + json['query']['searchinfo']['totalhits']  +  ' articles</li>'
+			var element = '<li>Term ' + '"' + decodeURIComponent(searchTerm) + '"' + ' has ' + json['query']['searchinfo']['totalhits']  +  ' articles</li>'
 			$('#ListOfHotItems').prepend(element); 
 		},
 		error:function()
@@ -19,9 +19,31 @@ function wikipediaSearch(searchTerm)
 	});
 }
 
-// TODO: Do an zeebox API request
+
 function getZeeTag() 
 {
 	console.log( "trying to get a zeetag");
-	return "something"
+	$.ajax({ 
+		beforeSend: function (request)
+		{
+			request.setRequestHeader("zeebox-app-id","15b9ba0a");
+			request.setRequestHeader("zeebox-app-key", "bf3c4703dfea8b36b7c0717e73f1b895");
+		},
+		dataType: "json",
+		url: "https://api.zeebox.com/zta/zeetags?broadcastevent=3052894&service=273&ad-region=1&domain=com.zeebox&platform=ipad",
+		crossDomain: true,
+		success:function(json)
+		{
+			console.log( "returning " + encodeURIComponent(json["zeetags"][0]["title"]));
+			wikipediaSearch(encodeURIComponent(json["zeetags"][0]["title"])) 
+			return encodeURIComponent(json["zeetags"][0]["title"]); 
+
+		},
+		error:function()
+		{
+			console.log( "returning error" );
+			return "error"
+		},
+});
+
 }
