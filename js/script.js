@@ -8,7 +8,8 @@ function wikipediaSearch(searchTerm)
 		{
 			console.log("search: " + searchTerm + " success");
 			console.log("total hits: " + json['query']['searchinfo']['totalhits']);
-			return json['query']['searchinfo']['totalhits'];
+			var element = '<li>Term ' + '"' + searchTerm + '"' + ' has ' + json['query']['searchinfo']['totalhits']  +  ' articles</li>'
+			$('#ListOfHotItems').prepend(element); 
 		},
 		error:function()
 		{
@@ -16,9 +17,6 @@ function wikipediaSearch(searchTerm)
 			return 0;
 		},
 	});
-	
-	var element = '<li>Term: ' + '</li>'
-	$('#ListOfHotItems').prepend('<li>Term </li>'); 
 }
 
 // TODO: Do an zeebox API request
