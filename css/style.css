@@ -1,11 +1,14 @@
 body
 	{
-	background-color:#d0e4fe;
+	background-color:#C0C0C0;
+	opacity:0.9;
 	}
 h1
 	{
-	color:orange;
+	color:#E0E0E0;
 	text-align:center;
+	font-family:"Times New Roman";
+	font-size:22px;
 	}
 p
 	{

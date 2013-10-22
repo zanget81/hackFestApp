@@ -17,3 +17,10 @@ function wikipediaSearch(searchTerm)
 		},
 	});
 }
+
+// TODO: Do an zeebox API request
+function getZeeTag() 
+{
+	console.log( "trying to get a zeetag");
+	return "something"
+}
